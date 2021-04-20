@@ -1,0 +1,15 @@
+{
+  "posts": [],
+  "category": [
+    {
+      "title": "O'zbekiston",
+      "link": "uzbekiston",
+      "id": 2
+    },
+    {
+      "title": "Jahon",
+      "link": "jahon",
+      "id": 3
+    }
+  ]
+}
