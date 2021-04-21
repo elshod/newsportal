@@ -1,5 +1,12 @@
 {
-  "posts": [],
+  "posts": [
+    {
+      "category_id": 2,
+      "content": "<h2 class=\"ql-align-center\">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </h2><p>Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p><p><br></p><p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.</p><p><br></p><blockquote>Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</blockquote><p><br></p><ol><li>Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.</li><li> Aenean imperdiet. Etiam ultricies nisi vel augue. </li><li>Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus.</li><li>Maecenas tempus, tellus eget condimentum rhoncu</li></ol><p><br></p>",
+      "title": "test",
+      "id": 1
+    }
+  ],
   "category": [
     {
       "title": "O'zbekiston",
@@ -7,7 +14,7 @@
       "id": 2
     },
     {
-      "title": "Jahon",
+      "title": "Jaxon",
       "link": "jahon",
       "id": 3
     }

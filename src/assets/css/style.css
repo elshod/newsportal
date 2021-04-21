@@ -840,7 +840,7 @@ input:focus {
     align-items: center;
     justify-content: space-between;
 }
-.navbar__menu.flex-start {
+.navbar__menu.flex-start{
     justify-content: flex-start;
 }
 
@@ -852,6 +852,7 @@ input:focus {
     display: inline-block;
     color: #fff;
 }
+
 .navbar__menu.flex-start .link {
     margin-right: 15px;
 }
@@ -2747,6 +2748,77 @@ input:focus {
 
 .comments__answer .text textarea:focus {
     outline: unset;
+}
+
+.adm {
+    background-color: #fff;
+    padding: 30px 0px;
+}
+
+.adm select,
+  .adm input {
+    border: 1px solid #e7e7e7;
+    padding: 10px;
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.adm table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.adm table th,
+    .adm table td {
+    border: 1px solid #e7e7e7;
+    padding: 10px;
+}
+.adm button,
+.adm table th button,
+      .adm table td button {
+    border: 0;
+    padding: 5px 15px;
+}
+.adm button.primary{
+    padding: 10px;
+    margin: 5px 0px;
+}
+.adm button.primary,
+.adm table th button.success,
+        .adm table td button.success {
+    background-color: #3DC47E;
+    color: #fff;
+}
+
+.adm table th button.danger,
+        .adm table td button.danger {
+    background-color: #d11111;
+    color: #fff;
+}
+
+.adm h6 {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.adm__menu {
+    border: 1px solid #e7e7e7;
+}
+
+.adm__menu a {
+    display: block;
+    padding: 15px;
+    font-size: 18px;
+    color: #000;
+}
+
+.adm__menu a.active, .adm__menu a:hover {
+    background-color: #4592FF;
+    color: #fff;
 }
 
 .subs {

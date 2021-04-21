@@ -13,9 +13,18 @@ export default {
         },
         remCategory(state,payload){
             state.category.splice(payload,1)
+        },
+        saveCategory(state,payload){
+            state.category[payload.index] = payload.obj
         }
     },
     actions: {
+        editCategory(context,payload){
+            axios.put('http://localhost:3000/category/'+payload.obj.id,payload.obj).then(response => {
+                console.log(response)
+                context.commit('saveCategory',payload)
+            })
+        },
         allCategory(context){
             axios.get('http://localhost:3000/category').then(response => {
                 context.commit('toCategory',response.data)
@@ -40,6 +49,11 @@ export default {
         getByLink(state){
             return byLink => {
                 return state.category.find(i => i.link == byLink)
+            }
+        },
+        getById(state){
+            return byId => {
+                return state.category.find(i => i.id == byId)
             }
         }
     }

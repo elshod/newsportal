@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Category from '../views/Category.vue'
+import Post from '../views/Post.vue'
 
 import Admin from '../views/Admin.vue'
 import AdminCategory from '../components/admin/Category.vue'
@@ -32,7 +33,11 @@ const routes = [
   },
   {
     path: '/category/:link',
-    component: Category
+    component: Category,
+  },
+  {
+    path: '/category/:cat/:id',
+    component: Post
   }
 ]
 

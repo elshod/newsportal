@@ -29,8 +29,8 @@ export default{
             return state.posts
         },
         post(state){
-            return link => {
-                return state.posts.find(i => i.link == link)
+            return id => {
+                return state.posts.find(i => i.id == id)
             }
         },
         postsByCategory(state){
