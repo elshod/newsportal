@@ -15,7 +15,6 @@
                     <router-view></router-view>
                 </div>
             </div>
-        
         </div>
     </div>
 </template>
@@ -35,7 +34,11 @@
                     {
                         t: 'Maqolalar',
                         l: '/admin/posts'
-                    }
+                    },
+                    {
+                        t: 'Mualliflar',
+                        l: '/admin/authors'
+                    },
                 ]
             }
         }

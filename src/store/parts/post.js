@@ -14,6 +14,12 @@ export default{
             axios.get('http://localhost:3000/posts').then(response => {
                 context.commit('allPost',response.data)
             })
+        },
+        delPost(context,payload){
+            axios.delete('http://localhost:3000/posts/'+payload.id).then(response => {
+                console.log(response)
+                context.commit('removePost',payload.index)
+            })
         }
     },
     mutations: {
@@ -22,6 +28,9 @@ export default{
         },
         allPost(state,payload){
             state.posts = payload 
+        },
+        removePost(state,payload){
+            state.posts.splice(payload,1)
         }
     },
     getters: {
@@ -38,6 +47,14 @@ export default{
                 return state.posts.filter(post => {
                     return post.category_id == id
                 })
+            }
+        },
+        getLength(state){
+            return authorId => {
+                let a = state.posts.filter(i => {
+                    return i.author_id == authorId
+                })
+                return a.length
             }
         }
     },

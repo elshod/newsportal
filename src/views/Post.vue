@@ -1,12 +1,11 @@
 <template>
     <div>
-        <div class="headpage" style="background-image:url(https://images.unsplash.com/photo-1617140237060-d09a58ba8edd?ixid=MnwxMjA3fDB8MHxwaG90by1vZi10aGUtZGF5fHx8fGVufDB8fHx8&ixlib=rb-1.2.1&dpr=2&auto=format%2Ccompress&fit=crop&w=4399&h=594)">
+        <div class="headpage" :style="`background-image:url(${post.url})`">
             <div class="mcontainer">
                 <div class="headpage__top">
                     <div class="cat">{{getCategory(post.category_id)}}</div>
                 </div>
                 <h1 class="headpage__title">{{post.title}}</h1>
-
             </div>
         </div>
         <div class="wrapper">
@@ -19,12 +18,12 @@
                     <div class="col-3">
                         <div class="author">
                             <div class="box">
-                                <div class="img" style="background-image:url(assets/img/bavatar.jpg)"></div>
-                                <div class="name">Mira Anderson</div>
-                                <div class="spec">Traveler & Photographer</div>
-                                <div class="stat">82 articles</div>
+                                <div class="img" :style="`background-image:url(${author.url})`"></div>
+                                <div class="name">{{author.name}}</div>
+                                <div class="spec">{{author.spec}}</div>
+                                <div class="stat">{{len}} articles</div>
                                 <div class="social">
-                                    <a class="link" href="#">
+                                    <a class="link" :href="author.fb" target="_blank">
                                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -32,7 +31,7 @@
                                                 fill="#BCBFC2" />
                                         </svg>
                                     </a>
-                                    <a class="link" href="#">
+                                    <a class="link" :href="author.tw" target="_blank">
                                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -40,7 +39,7 @@
                                                 fill="#BCBFC2" />
                                         </svg>
                                     </a>
-                                    <a class="link" href="#">
+                                    <a class="link" :href="author.in" target="_blank">
                                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -71,6 +70,12 @@
         computed: {
             post() {
                 return this.$store.getters.post(this.id)
+            },
+            author(){
+                return this.$store.getters.getAuthor(this.post.author_id)
+            },
+            len(){
+                return this.$store.getters.getLength(this.author.id)
             }
         },
         methods:{

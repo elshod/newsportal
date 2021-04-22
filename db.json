@@ -1,22 +1,61 @@
 {
+  "authors": [
+    {
+      "name": "Alex",
+      "spec": "Traveler",
+      "url": "https://i.pinimg.com/564x/f9/45/29/f94529a96200bb4fcb6619a066194214.jpg",
+      "fb": "alex",
+      "tw": "alex",
+      "in": "alex",
+      "id": 1
+    }
+  ],
   "posts": [
     {
-      "category_id": 2,
-      "content": "<h2 class=\"ql-align-center\">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </h2><p>Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p><p><br></p><p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.</p><p><br></p><blockquote>Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</blockquote><p><br></p><ol><li>Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.</li><li> Aenean imperdiet. Etiam ultricies nisi vel augue. </li><li>Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus.</li><li>Maecenas tempus, tellus eget condimentum rhoncu</li></ol><p><br></p>",
-      "title": "test",
+      "category_id": 1,
+      "url": "https://images.unsplash.com/photo-1617396900799-f4ec2b43c7ae?ixid=MnwxMjA3fDB8MHxwaG90by1vZi10aGUtZGF5fHx8fGVufDB8fHx8&ixlib=rb-1.2.1&dpr=1&auto=format%2Ccompress&fit=crop&w=2799&h=594",
+      "content": "<h2 class=\"ql-align-center\">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </h2><p>Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p><p class=\"ql-indent-1\">Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</p><p>Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi.</p><ul data-checked=\"false\"><li>Nam eget dui. </li><li>Etiam rhoncus. </li><li>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. </li><li>Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. </li></ul><p>Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,</p>",
+      "title": "Lorem ipsum dolor sit amet",
+      "author_id": 1,
+      "date": "2021-04-22",
       "id": 1
     }
   ],
   "category": [
     {
-      "title": "O'zbekiston",
-      "link": "uzbekiston",
+      "title": "News",
+      "link": "news",
+      "group": 0,
+      "menu": true,
+      "id": 1
+    },
+    {
+      "title": "Techno",
+      "link": "techno",
+      "group": 4,
+      "menu": true,
       "id": 2
     },
     {
-      "title": "Jaxon",
-      "link": "jahon",
+      "title": "Flights",
+      "link": "flights",
+      "group": 2,
+      "menu": true,
       "id": 3
+    },
+    {
+      "title": "Talking Tech",
+      "link": "talking-tech",
+      "group": 4,
+      "menu": true,
+      "id": 4
+    },
+    {
+      "title": "Personal Finance",
+      "link": "personal-finance",
+      "group": 5,
+      "menu": false,
+      "id": 5
     }
   ]
 }

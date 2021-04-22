@@ -15,7 +15,7 @@
     export default {
         computed:{
             category(){
-                return this.$store.getters.category
+                return this.$store.getters.getActiveCategory
             }
         }
     }

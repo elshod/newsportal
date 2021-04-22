@@ -19,6 +19,7 @@ export default {
   created(){
     this.$store.dispatch('allCategory')
     this.$store.dispatch('allPosts')
+    this.$store.dispatch('getAuthors')
   }
 }
 </script>

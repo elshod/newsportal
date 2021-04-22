@@ -2,25 +2,45 @@
     <div>
         <h6>Maqolalar</h6>
         <hr>
-        <h4>Yangi maqolalar</h4>
-        <div class="row">
-            <div class="col-6">
-                <input type="text" v-model="post.title" placeholder="Sarlavha">
+        
+        <div v-if="active">
+            <h4>Yangi maqolalar</h4>
+            <div class="row">
+                <div class="col-6">
+                    <input type="text" v-model="post.title" placeholder="Sarlavha">
+                </div>
+                <div class="col-6">
+                    <select id="category" v-model="post.category_id">
+                        <option value="none">Bo`limni tanlang</option>
+                        <option v-for="(cat,index) of category" :key="index" :value="cat.id">
+                            {{cat.title}}
+                        </option>
+                    </select>
+                </div>
+                <div class="col-4">
+                    <select id="category" v-model="post.author_id">
+                        <option value="none">Muallifni tanlang</option>
+                        <option v-for="(aut,index) of authors" :key="index" :value="aut.id">
+                            {{aut.name}} 
+                            <strong>{{aut.spec}}</strong>
+                        </option>
+                    </select>
+                </div>
+                <div class="col-4">
+                    <input type="date" v-model="post.date" placeholder="Sana">
+                </div>
+                <div class="col-4">
+                    <input type="text" v-model="post.url" placeholder="Rasm url">
+                </div>
+                <div class="col-12">
+                    <vue-editor v-model="post.content" />
+                </div>
             </div>
-            <div class="col-6">
-                <select id="category" v-model="post.category_id">
-                    <option value="none">Bo`limni tanlang</option>
-                    <option v-for="(cat,index) of category" :key="index" :value="cat.id">
-                        {{cat.title}}
-                    </option>
-                </select>
-            </div>
-            <div class="col-12">
-                <vue-editor v-model="post.content" />
-            </div>
+            <button @click="active = !active" class="danger">Bekor qilish</button>
+            <button @click="add" class="primary">Qo'shish</button>
         </div>
-        <button @click="add" class="primary">Qo'shish</button>
-        <hr>
+        <div v-else>
+            <button class="primary" @click="active=!active">Yangi maqolar</button>
         <table>
             <tr>
                 <th>№</th>
@@ -39,10 +59,11 @@
                 </td>
                 <td><button class="success">Edit</button></td>
                 <td>
-                    <button class="danger">Delete</button>
+                    <button class="danger" @click="del(index)">Delete</button>
                 </td>
             </tr>
         </table>
+        </div>
     </div>
 </template>
 
@@ -54,6 +75,7 @@ export default {
     },
     data(){
         return {
+            active:false,
             post: {
                 category_id: 'none'
             },
@@ -65,6 +87,9 @@ export default {
         },
         category(){
             return this.$store.getters.category
+        },
+        authors(){
+            return this.$store.getters.authors
         }
     },
     methods:{
@@ -81,6 +106,13 @@ export default {
         getLinkCategory(id){
             let cat = this.$store.getters.getById(id)
             return cat.link
+        },
+        del(index){
+            let post = {
+                index:index,
+                id: this.posts[index].id
+            }
+            this.$store.dispatch('delPost',post)
         }
     }
 }

@@ -5,8 +5,6 @@ import Category from '../views/Category.vue'
 import Post from '../views/Post.vue'
 
 import Admin from '../views/Admin.vue'
-import AdminCategory from '../components/admin/Category.vue'
-import AdminPosts from '../components/admin/Posts.vue'
 
 Vue.use(VueRouter)
 
@@ -23,11 +21,15 @@ const routes = [
     children: [
       {
         path: '/admin/category',
-        component: AdminCategory
+        component: () => import('../components/admin/Category.vue')
       },
       {
         path: '/admin/posts',
-        component: AdminPosts
+        component: () => import('../components/admin/Posts.vue')
+      },
+      {
+        path: '/admin/authors',
+        component: () => import('../components/admin/Authors.vue')
       },
     ]
   },
