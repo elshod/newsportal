@@ -1920,6 +1920,17 @@ input:focus {
     background-position: center center;
     background-repeat: no-repeat;
     padding-top: 60px;
+    position: relative;
+}
+.headpage:before {
+    content: '';
+    background-color: rgba(0,0,0,0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
 }
 
 .headpage__top {
@@ -1927,6 +1938,8 @@ input:focus {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    z-index: 1;
 }
 
 .headpage__top .cat {
@@ -1989,9 +2002,11 @@ input:focus {
     font-family: 'robo-b';
     line-height: 70px;
     color: #fff;
-    margin-top: 52px;
+    margin-top: 42px;
     margin-bottom: 30px;
-    max-width: 750px;
+    max-width: unset;
+    position: relative;
+    z-index: 1;
 }
 
 .headpage__subtitle {
@@ -2000,6 +2015,8 @@ input:focus {
     opacity: 0.85;
     max-width: 556px;
     margin-bottom: 60px;
+    position: relative;
+    z-index: 1;
 }
 
 .headpage__stat {
@@ -2010,6 +2027,8 @@ input:focus {
     justify-content: space-between;
     align-items: center;
     justify-content: flex-start;
+    position: relative;
+    z-index: 1;
 }
 
 .headpage__stat span {
@@ -2207,7 +2226,13 @@ input:focus {
 .wrapper .author .box {
     padding: 35px 25px 0px;
 }
-
+.category__title {
+    text-align: center;
+    font-size: 36px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    font-family: 'robo-b';
+}
 .wrapper .author .img {
     width: 90px;
     height: 90px;
@@ -2755,7 +2780,7 @@ input:focus {
     background-color: #fff;
     padding: 30px 0px;
 }
-
+.adm textarea,
 .adm select,
   .adm input {
     border: 1px solid #e7e7e7;

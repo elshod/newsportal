@@ -35,7 +35,7 @@
                         <div class="text">Boston and New York Bear Brunt</div>
                     </div>
                 </div>
-                <a class="header__logo" href="/">
+                <router-link class="header__logo" to="/">
                     <svg width="184" height="31" viewBox="0 0 184 31" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M11.8311 2.03922V5.4902L8.77031 6.07843V20.9804C8.77031 22.8627 9.2739 24.2745 10.2811 25.2157C11.3013 26.1438 12.6944 26.6078 14.4602 26.6078C16.2522 26.6078 17.6583 26.1438 18.6786 25.2157C19.6989 24.2876 20.209 22.8758 20.209 20.9804V6.07843L17.1678 5.4902V2.03922H28.9989V5.4902L25.9382 6.07843V20.9804C25.9382 24.183 24.8787 26.6536 22.7597 28.3922C20.6537 30.1307 17.8873 31 14.4602 31C11.0463 31 8.28634 30.1307 6.18042 28.3922C4.08758 26.6536 3.04116 24.183 3.04116 20.9804V6.07843L0 5.4902V2.03922H11.8311Z"
@@ -65,8 +65,8 @@
                             d="M172.444 3.45098V0H181.234V26.5686L184 27.1569V30.5882H172.738V27.1569L175.504 26.5686V4.03922L172.444 3.45098Z"
                             fill="#262D33" />
                     </svg>
-                </a>
-                <div class="header__date">Monday, January 1, 2018</div>
+                </router-link>
+                <div class="header__date">{{date}}</div>
                 <div class="header__weat">
                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -80,7 +80,18 @@
 
 <script>
     export default {
-
+        data(){
+            return {
+            }
+        },
+        computed: {
+            date(){
+                let d = new Date()
+                let month = ["January","February","March","April","May","June","July","August","September","October","November","December"]
+                let wday = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+                return `${wday[d.getDay()-1]} ${month[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}`
+            }
+        }
     }
 </script>
 

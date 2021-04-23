@@ -33,6 +33,39 @@
                     <input type="text" v-model="post.url" placeholder="Rasm url">
                 </div>
                 <div class="col-12">
+                    <textarea v-model="post.desc" placeholder="Qisqa matn"></textarea>
+                </div>
+                <div class="col-4">
+                    <label>
+                        <input type="checkbox" v-model="post.top"> Tepa qism
+                    </label>
+                </div>
+                <div class="col-4">
+                    <label>
+                        <input type="checkbox" v-model="post.slider"> Slider qism
+                    </label>
+                </div>
+                <div class="col-4">
+                    <label>
+                        <input type="checkbox" v-model="post.big"> Katta qism
+                    </label>
+                </div>
+                <div class="col-4">
+                    <label>
+                        <input type="checkbox" v-model="post.pop"> Popular qism
+                    </label>
+                </div>
+                <div class="col-4">
+                    <label>
+                        <input type="checkbox" v-model="post.photo"> Photo qism
+                    </label>
+                </div>
+                <div class="col-4">
+                    <label>
+                        <input type="checkbox" v-model="post.mini"> Mini qism
+                    </label>
+                </div>
+                <div class="col-12">
                     <vue-editor v-model="post.content" />
                 </div>
             </div>
@@ -40,7 +73,7 @@
             <button @click="add" class="primary">Qo'shish</button>
         </div>
         <div v-else>
-            <button class="primary" @click="active=!active">Yangi maqolar</button>
+            <button class="primary" @click="show">Yangi maqolar</button>
         <table>
             <tr>
                 <th>№</th>
@@ -77,7 +110,7 @@ export default {
         return {
             active:false,
             post: {
-                category_id: 'none'
+                category_id: 'none',
             },
         }
     },
@@ -93,6 +126,17 @@ export default {
         }
     },
     methods:{
+        show(){
+            this.active = true
+            let d = new Date()
+            let str = ''
+            if (d.getMonth()<10)
+                str = '0'+(d.getMonth()+1)
+            else
+                str =  d.getMonth()+1
+                
+            this.post.date = d.getFullYear()+'-'+str+'-'+d.getDate()
+        },
         add(){
             this.$store.dispatch('addPost',this.post)
             this.post = {

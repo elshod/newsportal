@@ -6,6 +6,30 @@
                     <div class="cat">{{getCategory(post.category_id)}}</div>
                 </div>
                 <h1 class="headpage__title">{{post.title}}</h1>
+                <div class="headpage__subtitle">{{post.desc}}</div>
+                <div class="headpage__stat"> <span>
+                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M7.5 14.25C3.77208 14.25 0.75 11.2279 0.75 7.5C0.75 3.77208 3.77208 0.75 7.5 0.75C11.2279 0.75 14.25 3.77208 14.25 7.5C14.25 11.2279 11.2279 14.25 7.5 14.25ZM8.25 7.5V4.5C8.25 4.08579 7.91421 3.75 7.5 3.75C7.08579 3.75 6.75 4.08579 6.75 4.5V8.25C6.75 8.66421 7.08579 9 7.5 9H9.75C10.1642 9 10.5 8.66421 10.5 8.25C10.5 7.83579 10.1642 7.5 9.75 7.5H8.25Z"
+                                fill="white"></path>
+                        </svg>{{post.date}}</span><span>
+                        <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M11.8391 1.96027C11.1701 1.21184 10.2807 0.799988 9.33459 0.799988C8.38831 0.799988 7.59423 1.21184 6.925 1.96027L6.49998 2.63915L6.075 1.96027C5.40597 1.21184 4.61164 0.799988 3.66557 0.799988C2.71953 0.799988 1.82982 1.21184 1.16086 1.96027C-0.220288 3.50548 -0.220288 6.01962 1.16086 7.56423L6.10991 12.3207C6.19083 12.4115 6.29157 12.4672 6.39682 12.4886C6.43211 12.4964 6.46761 12.5 6.50317 12.5C6.64318 12.5 6.78341 12.4403 6.89004 12.3207L11.8391 7.56423C13.2203 6.01962 13.2203 3.50548 11.8391 1.96027Z"
+                                fill="#BCBFC2"></path>
+                        </svg>830</span><span>
+                        <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M11.1346 11V14L8.36064 11H2.25C1.42157 11 0.75 10.3284 0.75 9.5V2C0.75 1.17157 1.42157 0.5 2.25 0.5H12.75C13.5784 0.5 14.25 1.17157 14.25 2V9.5C14.25 10.3284 13.5784 11 12.75 11H11.1346Z"
+                                fill="#BCBFC2"></path>
+                        </svg>19</span>
+                    <a class="share" href="#">
+                        <svg width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M17.7816 5.13237L11.665 0.202036C11.0971 -0.25578 10.125 0.131603 10.125 0.695069V2.8785C6.93568 2.98415 4.54369 3.82935 2.75243 5.27323C0 7.49188 0 10 0 11.2C2.75243 7.84 10.125 7.84 10.125 7.84V10.5205C10.125 11.084 11.1408 11.4361 11.665 11.0135L17.7816 6.08322C17.9563 5.94235 18 5.77608 18 5.6C18 5.42392 17.9563 5.27323 17.7816 5.13237Z"
+                                fill="white"></path>
+                        </svg>142 shares</a>
+                </div>
             </div>
         </div>
         <div class="wrapper">
@@ -71,15 +95,15 @@
             post() {
                 return this.$store.getters.post(this.id)
             },
-            author(){
+            author() {
                 return this.$store.getters.getAuthor(this.post.author_id)
             },
-            len(){
+            len() {
                 return this.$store.getters.getLength(this.author.id)
             }
         },
-        methods:{
-            getCategory(id){
+        methods: {
+            getCategory(id) {
                 let cat = this.$store.getters.getById(id)
                 return cat.title
             }
